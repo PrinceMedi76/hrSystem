@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 const Screen = () => {
@@ -16,6 +17,7 @@ const Screen = () => {
 
         console.log(file)
         console.log(formData.get("cv"))
+
         const response = await fetch("http://localhost:5000/upload",{
             method:"POST",
             mode:"cors",
@@ -30,6 +32,9 @@ const Screen = () => {
         <>
             
             <div className="bg-blue-400 p-10 text-white">
+                <Link to="/">
+                    <button className="w-25 p-1 bg-gray-300 text-black font-bold rounded-full m-1">Home</button>
+                </Link>
                 <p className="text-xl font-bold font-serif">HR SYSTEM</p>
                 <input  type="file" onChange={(e)=> 
                     setFile(e.target.files[0])} 
@@ -38,28 +43,28 @@ const Screen = () => {
                 className="bg-green-400 p-1 rounded-lg" 
                 type="submit" name="submit">submit</button>
             </div>
-            <div>
-                <h2>Status: {status}</h2>
-                <h3 className="bg-gray-500 text-purple-200 mt-10  text-center">matched Requirements</h3>
+            <div className="justify-center items-center text-center">
+                <h2 className="text-blue-500 font-bold">Status: {status}</h2>
+                <h3 className="w-full bg-transparent text-blue-500 mt-10  text-center font-bold">Matched Requirements</h3>
                 {matched.length>0?(
                     matched.map((matched,index)=>(
                         <p key={index}>{matched}</p>
                     ))
                 ):(
-                    <p>No Match Found yet</p>
+                    <p className="text-gray-300">No Match Found yet</p>
                 )}
-                <h3 className="bg-gray-500 text-purple-200 mt-10  text-center">Missing Skills</h3>
+                <h3 className="bg-transparent text-blue-500 mt-10  text-center font-bold">Missing Skills</h3>
                 {missing.length>0?(
                     missing.map((missed,index)=>(
                         <p key={index}>{missed}</p>
                     ))
                 ):(
-                    <p>No Match Found yet</p>
+                    <p className="text-gray-300">No Missing Found</p>
                 )}
             </div>  
-            <div className="mb-100">
-                <h3 className="bg-gray-500 text-purple-200 mt-10  text-center">Requirements</h3>
-                <input className="mt-10 outline-0 border p-2 w-80" type="text" placeholder="Enter Requirements separate by Comma" value={requirements} 
+            <div className="mb-100 ">
+                <h3 className="bg-transparent text-blue-500 mt-10 font-bold  text-center">Requirements</h3>
+                <input className="mt-10 shadow-2xl outline-0 border p-2 w-80" type="text" placeholder="Enter Requirements separate by Comma" value={requirements} 
                 onChange={(e)=>setRequirements(e.target.value)} />
             </div>
         </>
