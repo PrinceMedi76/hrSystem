@@ -8,7 +8,7 @@ const Home = () => {
         <Link to="/screen">
           <button className="w-25 p-2 bg-gray-300 text-black font-bold rounded-3xl m-1  hover:bg-black hover:text-white transition-shadow transform-3d hover:w-30">HR</button>
         </Link>
-        <Link to="/admin">
+        <Link to="/dashboard">
           <button className="w-25 p-2 bg-gray-300 text-black font-bold rounded-3xl m-1  hover:bg-black hover:text-white transition-shadow transform-3d hover:w-30">Admin</button>
         </Link>
       </div>
