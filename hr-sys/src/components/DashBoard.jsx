@@ -11,9 +11,6 @@ import { PiArrowCircleLeftThin } from "react-icons/pi";
 const DashBoard = () => {
   return (
     <>
-      <div className="mr-90 position-absolute left-3">
-        
-      </div>
       <div>
         <header className="flex m-2 text-green-700 font-bold text-lg shadow-md items-center justify-between bg-gray-200 p-2 rounded-2xl">
           <div className="text-sm font-mono">
@@ -25,8 +22,9 @@ const DashBoard = () => {
           <img src={Image} alt="logo" className="w-10 h-10 rounded-full" />
         </header>
       </div>
-      <div className="w-48 h-80 bg-gray-200 p-2 m-2 rounded-2xl shadow-lg">
-        <div className="mt-4 bg-white p-2 rounded-2xl w-39 cursor-pointer h-70 shadow-lg">
+      <div className="flex flex-direction-row justify-center items-center gap-1">
+        <div className="w-48 h-104 bg-gray-200 p-2 m-2 rounded-2xl shadow-lg">
+        <div className="mt-4 bg-white p-2 rounded-2xl w-39 cursor-pointer h-90 shadow-lg">
           <div className="flex flex-direction-row mb-5">
             <PiUsersThin size="18"/>
             <span className="ml-2 text-sm">Users</span>
@@ -48,6 +46,10 @@ const DashBoard = () => {
             <span className="ml-2 text-sm">Switch User</span>
           </div>
         </div>
+      </div>
+      <div className="flex-1 h-104 bg-gray-200 p-2 m-2 rounded-2xl shadow-lg">
+          
+      </div>
       </div>
     </>
   )

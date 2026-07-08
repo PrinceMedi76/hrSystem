@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { PiArrowCircleLeftThin } from "react-icons/pi";
 
 
 const Screen = () => {
@@ -32,10 +33,16 @@ const Screen = () => {
         <>
             
             <div className="bg-blue-400 p-10 text-white">
-                <Link to="/">
-                    <button className="w-25 p-1 bg-gray-300 text-black font-bold rounded-full m-1">Home</button>
-                </Link>
-                <p className="text-xl font-bold font-serif">HR SYSTEM</p>
+                <div className="flex flex-direction-row items-center">
+                    
+                <div className="text-sm font-mono">
+                            <Link to="/">
+                            <button className=" font-mono p-1 text-black m-1"><PiArrowCircleLeftThin size="35" /></button>
+                          </Link>
+                          </div>
+                          <p className="text-xl font-bold font-serif ml-30">HR SYSTEM</p>
+                </div>
+                
                 <input  type="file" onChange={(e)=> 
                     setFile(e.target.files[0])} 
                     className="bg-gray mt-10"/>
