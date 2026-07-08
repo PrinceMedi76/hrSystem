@@ -26,7 +26,13 @@ const Login = () => {
         setEmail("");
         setPhone("");
         setSelectedFile(null);
+        document.getElementById("cv_file").value = ""
         console.log(data);
+        if(response.ok){
+          alert("Application submitted Successfully")
+        }else{
+          alert("No Data submitted")
+        }
     }
 
   return (
@@ -48,7 +54,7 @@ const Login = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="cv_file">Cv_File:  </label>
-          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="file" onChange={(e)=>setSelectedFile(e.target.files[0])} />
+          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="file" id="cv_file" onChange={(e)=>setSelectedFile(e.target.files[0])} />
         </div>
         <button className="bg-blue-500 mt-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
           Submit
