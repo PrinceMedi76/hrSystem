@@ -1,6 +1,6 @@
 import pdfplumber
 from pypdf import PdfReader
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,send_from_directory
 from flask_cors import CORS
 import os
 from werkzeug.utils import secure_filename
@@ -12,6 +12,34 @@ app = Flask(__name__)
 CORS(app)
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.route("/viewApplicants", methods=["GET"])
+def viewApplicants():
+    conn = pyodbc.connect(
+        'DRIVER={ODBC Driver 17 for SQL Server};'
+        'SERVER=localhost;'
+        'DATABASE=hrSys;'
+        'Trusted_Connection=yes;'
+        'TrustedServerCertificate=yes;')
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, full_name, email, phone, cv_file, created_at FROM applications")
+    rows = cursor.fetchall()
+    print(rows)
+    viewApplicants = []
+    for row in rows:
+        viewApplicants.append({
+            "id":row[0],
+            "full_name":row[1],
+            "email":row[2],
+            "phone":row[3],
+            "cv_file":row[4],
+            "created_at":row[5],
+        })
+    return jsonify(viewApplicants)
+
+@app.route("/uploads/<path:filename>")
+def get_cv(filename):
+    return send_from_directory("uploads", filename)
 
 @app.route("/apply", methods=["POST"])
 def apply():

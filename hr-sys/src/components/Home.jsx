@@ -12,7 +12,7 @@ const Home = () => {
           <button className="w-25 p-2 bg-gray-300 text-black font-bold rounded-3xl m-1  hover:bg-black hover:text-white transition-shadow transform-3d hover:w-30">Admin</button>
         </Link>
         <Link to="/login">
-          <button className="w-25 p-2 bg-gray-300 text-black font-bold rounded-3xl m-1  hover:bg-black hover:text-white transition-shadow transform-3d hover:w-30">Login</button>
+          <button className="w-25 p-2 bg-gray-300 text-black font-bold rounded-3xl m-1  hover:bg-black hover:text-white transition-shadow transform-3d hover:w-30">Submit CV</button>
         </Link>
       </div>
     </div>
