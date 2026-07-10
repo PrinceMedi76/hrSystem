@@ -49,12 +49,11 @@
 
 body {
   margin: 5;
-  padding:5;
 }
 
 #root {
   width: 1126px;
-  min-width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);

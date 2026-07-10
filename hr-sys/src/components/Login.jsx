@@ -36,25 +36,25 @@ const Login = () => {
     }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-400">
-     <div className="bg-white p-10 rounded-lg shadow-md w-96 font-normal">
+    <div className="flex flex-col items-center justify-center min-h-screen bf-cover bg-center" style={{backgroundImage:"url('/login-bg.jpg')"}}>
+     <div className="bg-gray-400 p-10 rounded-lg shadow-md w-96 font-normal">
        <h2 className='font-semibold text-lg text-blue-600 mb-5'>Submit Your Application Here</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='text-white'>
         <div className="mb-4">
           <label htmlFor="name">Full_Name:  </label>
-          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="text" id="name" name="name" value={name} onChange={(e)=>setName(e.target.value)} />
+          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-1 " type="text" id="name" name="name" value={name} onChange={(e)=>setName(e.target.value)} />
         </div>
         <div className="mb-4">
           <label htmlFor="email">Email:  </label>
-          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-1" type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
         </div>
         <div className="mb-4">
           <label htmlFor="phone">Phone:  </label>
-          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="tel" id="phone" name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)} />
+          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-1" type="tel" id="phone" name="phone" value={phone} onChange={(e)=>setPhone(e.target.value)} />
         </div>
         <div className="mb-4">
           <label htmlFor="cv_file">Cv_File:  </label>
-          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" type="file" id="cv_file" onChange={(e)=>setSelectedFile(e.target.files[0])} />
+          <input className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-1" type="file" id="cv_file" onChange={(e)=>setSelectedFile(e.target.files[0])} />
         </div>
         <button className="bg-blue-500 mt-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
           Submit
