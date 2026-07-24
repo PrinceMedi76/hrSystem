@@ -1,4 +1,4 @@
-import { data, Link } from "react-router-dom";
+import {Link} from 'react-router-dom'
 import Image from "../assets/bankLogo.svg";
 import { CgProfile } from "react-icons/cg";
 import { PiUsersThin } from "react-icons/pi";
@@ -8,11 +8,7 @@ import { MdPreview } from "react-icons/md";
 import { GrOverview } from "react-icons/gr";
 import { PiUserSwitchThin } from "react-icons/pi";
 import { useState,useEffect } from 'react'
-import { SlRefresh } from "react-icons/sl";
-import { IoPeopleOutline } from "react-icons/io5";
-import { SlCalender } from "react-icons/sl";
-import { VscPreview } from "react-icons/vsc";
-import { TbClock } from "react-icons/tb";
+
 
 
 const DashBoard = () => {
@@ -50,12 +46,10 @@ const DashBoard = () => {
                 <span className="ml-2 text-sm">DashBoard</span>
               </div>
             </Link>
-          <Link to="/applicantdashboard">
-            <div className="flex flex-direction-row mb-5">
+          <div className="flex flex-direction-row mb-5">
             <RiAccountPinBoxFill size="18" />
             <span className="ml-2 text-sm">Applicants</span>
           </div>
-          </Link>
           <Link to="/screeningcv">
             <div className="flex flex-direction-row mb-5">
             <MdPreview size="18" />
@@ -66,68 +60,13 @@ const DashBoard = () => {
             <GrOverview size="18" />
             <span className="ml-2 text-sm">Overview</span>
           </div>
-          <Link to="/home">
-            <div className="flex flex-direction-row mt-25">
+          <div className="flex flex-direction-row mt-25 w-fit rounded-2xl bg-green-700 p-1 text-white">
             <PiUserSwitchThin size="18" />
-            <span className="ml-2 text-sm">Switch User</span>
+            <span className="ml-2 text-xs">HR Section</span>
           </div>
-          </Link>
         </div>
       </div>
       <div className="flex-1 w-full overflow-hidden h-150 bg-gray-200 p-2 m-2 rounded-xl shadow-lg">
-        <div className="flex justify-between">
-          <div>
-            <h2 className="flex m-2 ml-5 font-bold text-md">Applicants</h2>
-            <h6 className="flex m-2 ml-5 text-xs">Manage and review all job applications</h6>
-          </div>
-          <div className=" items-center justify-center flex">
-            <button onClick={()=> setViewApplicants(data)} className="flex gap-2 w-30 p-2 bg-green-700 text-white font-semibold text-sm rounded-xl m-1">
-              <SlRefresh className="mt-1 ml-3" size={15}/>Refresh
-            </button>
-          </div>
-        </div>
-        <div className="flex">
-          <div className="w-42 rounded bg-white p-3 mb-4 ml-3 flex gap-5">
-            <div className="w-8 h-8 bg-green-100 rounded-4xl p-1">
-              <IoPeopleOutline size={24} />
-            </div>
-            <div className="grid text-start text-xs font-semibold">
-              <h>Total Applicants</h>
-              <h className="text-green-600 text-xl font-bold">48</h>
-              <h>All time</h>
-            </div>
-          </div>
-          <div className="w-45 rounded bg-white p-3 mb-4 ml-5 flex gap-5">
-            <div className="w-9 h-9 bg-blue-100 rounded-4xl p-2">
-              <SlCalender size={19} />
-            </div>
-            <div className="grid text-start text-xs font-semibold">
-              <h>This Month</h>
-              <h className="text-blue-600 text-xl font-bold">12</h>
-              <h>July 2026</h>
-            </div>
-          </div>
-          <div className="w-45 rounded bg-white p-3 mb-4 ml-5 flex gap-5">
-            <div className="w-9 h-9 bg-orange-100 rounded-4xl p-2">
-              <VscPreview size={19} />
-            </div>
-            <div className="grid text-start text-xs font-semibold">
-              <h>Reviewed</h>
-              <h className="text-orange-400 text-xl font-bold">12</h>
-              <h>This Month</h>
-            </div>
-          </div>
-          <div className="w-45 rounded bg-white p-3 mb-4 ml-5 flex gap-5">
-            <div className="w-9 h-9 bg-purple-100 rounded-4xl p-2">
-              <TbClock size={19} />
-            </div>
-            <div className="grid text-start text-xs font-semibold">
-              <h>Pending</h>
-              <h className="text-purple-600 text-xl font-bold">33</h>
-              <h>To Be reviewed</h>
-            </div>
-          </div>
-        </div>
         <div className="bg-white overflow-x-auto overflow-y-auto">
           <table>
             <thead className="border-b bg-gray-50 w-190">

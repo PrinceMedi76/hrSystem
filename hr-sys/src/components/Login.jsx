@@ -60,7 +60,7 @@ const Login = () => {
           Submit
         </button>
         <div className="text-sm font-mono ">
-            <Link to="/">
+            <Link to="/dashboard">
             <button className=" font-mono p-1 text-black m-1"><PiArrowCircleLeftThin size="35" /></button>
           </Link>
         </div>
